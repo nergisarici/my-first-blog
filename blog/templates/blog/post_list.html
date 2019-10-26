@@ -6,17 +6,13 @@
     <div> <h1><a href="/">Nergo's blog</a></h1>
     </div>
 
+    {% for post in posts %}
     <div>
-      <p>26.10.2019, 15:50</p>
-      <h2><a href="">İlk Blogum</a></h2>
-      <p>Çok heyecanlıyım! Bu benim ilk blogum.</p>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-      <p>26.10.2019, 15:51</p>
-      <h3><a href="">İkinci Gönderim</a></h3>
-      <p>Bir varmış bir yokmuş, evvel zaman içinde Ne kadar zevkli bir işmiş bilgisayarlarla uğraşmak. Artık bilgisayar başından kalkmam. kalbur saman içinde, develer tellal iken, pireler berber iken; ben annemin beşiğini tıngır mıngır sallar iken.</p>
-    </div>
+{% endfor %}
 
   </body>
 <html>
